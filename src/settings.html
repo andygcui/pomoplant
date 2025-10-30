@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Layout: label left, control right */
+    .settings-section { max-width: 360px; margin: 0 auto; text-align: left; padding: 0 8px 56px; }
+    .setting-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0; font-family: 'VT323', monospace; font-size: 18px; color: black; }
+    .setting-row label { margin: 0; white-space: nowrap; }
+    .setting-row .control { flex: 0 0 88px; display: flex; justify-content: flex-end; }
+    .setting-row input[type="number"], .setting-row select { width: 88px; padding: 3px 5px; border-radius: 8px; border: 1px solid #cfc7b5; font-size: 13px; box-sizing: border-box; }
+    .setting-row input[type="checkbox"] { transform: scale(1.1); }
+    #saveNotice { font-family: 'VT323', monospace; text-align: center; min-height: 1.2em; color: #4d5d53; }
+    .settings-footer { position: fixed; left: 0; right: 0; bottom: 32px; display: flex; justify-content: center; }
+    #saveSettings { padding: 6px 14px; font-size: 18px; }
+  </style>
+  </head>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="home">Back</a>
+    <a href="settings.html" class="settings">Settings</a>
+  </div>
+
+  <h1>Settings</h1>
+
+  <div class="settings-section">
+    <div id="saveNotice"></div>
+
+    <div class="setting-row">
+      <label for="tickingToggle">Ticking Sound</label>
+      <div class="control"><input type="checkbox" id="tickingToggle"></div>
+    </div>
+
+    <div class="setting-row">
+      <label for="chimeToggle">End Chime</label>
+      <div class="control"><input type="checkbox" id="chimeToggle"></div>
+    </div>
+
+    <div class="setting-row">
+      <label for="musicSelect">Background music</label>
+      <div class="control"><select id="musicSelect">
+        <option value="none">None</option>
+        <option value="forest">Forest</option>
+        <option value="rain">Rain</option>
+        <option value="ocean">Ocean</option>
+      </select></div>
+    </div>
+
+    <div class="setting-row">
+      <label for="focusTime">Focus time (minutes)</label>
+      <div class="control"><input type="number" id="focusTime" min="1" max="60"></div>
+    </div>
+
+    <div class="setting-row">
+      <label for="breakTime">Short break time (minutes)</label>
+      <div class="control"><input type="number" id="breakTime" min="1" max="30"></div>
+    </div>
+
+    <div class="setting-row">
+      <label for="longBreakTime">Long break time (minutes)</label>
+      <div class="control"><input type="number" id="longBreakTime" min="1" max="60"></div>
+    </div>
+  </div>
+
+  <div class="settings-footer">
+    <button id="saveSettings">Save Settings</button>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

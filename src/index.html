@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomo-plant</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="home">Home</a>
+    <a href="settings.html" class="settings">Settings</a>
+  </div>
+  <h1>Pomo-plant</h1>
+
+  <p>Complete focus sessions to grow plants!</p>
+  
+  <div class="plant-container">
+    <div class="plant-wrapper" onclick="goTo('cactus.html')">
+      <img src="assets/cactus/image/cactus.png" class="plant-button" alt="Cactus" title="Cactus">
+    </div>
+    <div class="plant-wrapper" onclick="goTo('bonsai.html')">
+      <img src="assets/bonsai/image/bonsai.png" class="plant-button" alt="Bonsai" title="Bonsai">
+    </div>
+    <div class="plant-wrapper" onclick="goTo('orchid.html')">
+      <img src="assets/orchid/image/orchid.png" class="plant-button" alt="Orchid" title="Orchid">
+    </div>
+    <div class="plant-wrapper" onclick="goTo('bamboo.html')">
+      <img src="assets/bamboo/image/bamboo.png" class="plant-button" alt="Bamboo" title="Bamboo">
+    </div>
+    
+  </div>
+  
+
+  <p class="blink">Choose a plant to start</p>
+
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

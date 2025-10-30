@@ -1,0 +1,112 @@
+/* Import a different font for the index page */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans&family=VT323&display=swap");
+
+body {
+  max-width: 370px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f1e5 0%, #e6d8c3 100%);
+  height: 100vh;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-family: 'VT323', monospace;
+}
+
+.settings {
+  color: black;
+}
+
+.home {
+  color: black;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin-top: 15px;      /* Remove space above */
+  margin-bottom: 0px; /* Reduce space below */
+  text-align: center;
+  font-family: 'Press Start 2P';
+  font-size: 2rem;
+  color: #4d5d53;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+p {
+  margin-top: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+.plant-button {
+  display: block;
+  width: 140px;
+  image-rendering: pixelated;
+  cursor: pointer;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  transition: transform 0.2s ease-out;
+}
+
+.plant-button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.plant-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.plant-wrapper {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.plant-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.plant-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.plant-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.plant-wrapper:nth-child(4) { animation-delay: 0.4s; }
+
+.subtitle {
+  margin: 5px;
+  color: #666;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blink {
+  margin: 10px 0;
+  color: #666;
+  animation: blink 1.5s infinite;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}

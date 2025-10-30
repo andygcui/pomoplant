@@ -1,0 +1,26 @@
+{
+  "name": "pomoplant",
+  "version": "1.0.0",
+  "description": "plant growing pomodoro timer",
+  "main": "src/main.js",
+  "author": "Andy Cui",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^35.2.0",
+    "electron-builder": "^24.13.3",
+    "electron-installer-dmg": "^5.0.1",
+    "electron-packager": "^17.1.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "build": {
+    "appId": "com.andy.pomoplant",
+    "mac": {
+      "target": "dmg",
+      "icon": "pomo.icns"
+    }
+  }
+}
