@@ -5,6 +5,21 @@
   <title>Achievements</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    html {
+      background: linear-gradient(135deg, #f8f1e5 0%, #e6d8c3 100%);
+      min-height: 100%;
+    }
+    
+    body {
+      overflow: auto;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8f1e5 0%, #e6d8c3 100%);
+    }
+    
+    h1 {
+      font-size: 1.9rem;
+    }
+    
     .achievements-container {
       max-width: 360px;
       margin: 0 auto;
@@ -15,8 +30,6 @@
     .stats-section {
       margin-bottom: 30px;
       padding: 15px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 12px;
     }
     
     .stat-item {
@@ -34,7 +47,7 @@
       margin-top: 5px;
     }
     
-    .level-display {
+    .level-display-stat {
       font-size: 48px;
       color: #4d5d53;
       margin: 10px 0;
@@ -43,6 +56,7 @@
     
     .achievements-list {
       text-align: left;
+      margin-top: 20px;
     }
     
     .achievement-item {
@@ -115,7 +129,7 @@
 </head>
 <body>
   <div class="top-bar">
-    <a href="index.html" class="home">Back</a>
+    <a href="index.html" class="home">Home</a>
     <span id="level-display" class="level-display" onclick="window.location.href='achievements.html'">
       Level <span id="current-level">1</span>
     </span>
@@ -125,36 +139,6 @@
   <h1>Achievements</h1>
 
   <div class="achievements-container">
-    <div class="stats-section">
-      <div class="stat-item">
-        Level
-        <span class="stat-value level-display" id="currentLevel">1</span>
-      </div>
-      <div class="stat-item">
-        Total Plants Grown
-        <span class="stat-value" id="totalPlants">0</span>
-      </div>
-      
-      <div class="plant-stats">
-        <div class="plant-stat">
-          🌵 Cactus
-          <div class="plant-stat-value" id="cactusCount">0</div>
-        </div>
-        <div class="plant-stat">
-          🌲 Bonsai
-          <div class="plant-stat-value" id="bonsaiCount">0</div>
-        </div>
-        <div class="plant-stat">
-          🌺 Orchid
-          <div class="plant-stat-value" id="orchidCount">0</div>
-        </div>
-        <div class="plant-stat">
-          🎋 Bamboo
-          <div class="plant-stat-value" id="bambooCount">0</div>
-        </div>
-      </div>
-    </div>
-
     <div class="achievements-list" id="achievementsList">
       <!-- Achievements will be populated by JavaScript -->
     </div>
@@ -168,22 +152,14 @@
         AchievementsSystem.init();
         
         // Update stats
-        const totalPlants = AchievementsSystem.getTotalPlantsGrown();
         const currentLevel = AchievementsSystem.getCurrentLevel();
-        const plantsByType = AchievementsSystem.getPlantsByType();
         const unlockedAchievements = AchievementsSystem.getAchievements();
         const achievementDefinitions = AchievementsSystem.getAchievementDefinitions();
         
-        document.getElementById('currentLevel').textContent = currentLevel;
         const topBarLevelDisplay = document.getElementById('current-level');
         if (topBarLevelDisplay) {
           topBarLevelDisplay.textContent = currentLevel;
         }
-        document.getElementById('totalPlants').textContent = totalPlants;
-        document.getElementById('cactusCount').textContent = plantsByType.cactus || 0;
-        document.getElementById('bonsaiCount').textContent = plantsByType.bonsai || 0;
-        document.getElementById('orchidCount').textContent = plantsByType.orchid || 0;
-        document.getElementById('bambooCount').textContent = plantsByType.bamboo || 0;
         
         // Display achievements
         const achievementsList = document.getElementById('achievementsList');

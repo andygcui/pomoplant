@@ -137,6 +137,10 @@ button:hover {
   animation: blink 1s infinite;
 }
 
+.plant.needs-water {
+  animation: blink 1s infinite;
+}
+
 .timer-hidden {
   display: none;
 }

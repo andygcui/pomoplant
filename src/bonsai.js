@@ -24,9 +24,9 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function getTimerSeconds() {
-    const focusMin = parseInt(localStorage.getItem("focusTime"), 10);
-    const shortMin = parseInt(localStorage.getItem("breakTime"), 10);
-    const longMin = parseInt(localStorage.getItem("longBreakTime"), 10);
+    const focusMin = parseFloat(localStorage.getItem("focusTime"));
+    const shortMin = parseFloat(localStorage.getItem("breakTime"));
+    const longMin = parseFloat(localStorage.getItem("longBreakTime"));
     return {
       focus: (Number.isFinite(focusMin) && focusMin > 0 ? focusMin : 25) * 60,
       shortBreak: (Number.isFinite(shortMin) && shortMin > 0 ? shortMin : 5) * 60,
@@ -148,13 +148,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function showStaticImage() {
+  function showStaticImage(needsWater = false) {
     clearAnimation();
     // Preload the static image to ensure consistent sizing
     const img = new Image();
     img.src = plantStages.static[stage];
     img.onload = () => {
-      plantStage.innerHTML = `<img src="${plantStages.static[stage]}" class="plant" />`;
+      const plantClass = needsWater ? 'plant needs-water' : 'plant';
+      plantStage.innerHTML = `<img src="${plantStages.static[stage]}" class="${plantClass}" />`;
     };
   }
 
@@ -267,7 +268,7 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           startBtn.textContent = "Start another focus \n";
           plantStage.style.cursor = "pointer";
-          showStaticImage();
+          showStaticImage(true);
         } else {
           messageEl.textContent = "Your bonsai is fully grown! \n ";
           new Notification("Hooray!", { body: "Your bonsai is fully grown" });
@@ -484,7 +485,7 @@ window.addEventListener("DOMContentLoaded", () => {
           
             startBtn.textContent = "Start another focus";
             plantStage.style.cursor = "pointer";
-            showStaticImage();
+            showStaticImage(true);
           } else {
             applyGrowthAnimation().then(() => {
               startFinalAnimation();
