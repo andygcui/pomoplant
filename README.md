@@ -2,7 +2,7 @@
 
 A plant-growing Pomodoro timer app for macOS! Grow digital plants by completing focus sessions and taking productive breaks.
 
-![Pomoplant Screenshot](screenshot.png)
+<img src="screenshot.png" width="400" alt="Pomoplant Screenshot" />
 
 ## About
 
