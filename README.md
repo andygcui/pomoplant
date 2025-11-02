@@ -2,6 +2,8 @@
 
 A plant-growing Pomodoro timer app for macOS! Grow digital plants by completing focus sessions and taking productive breaks.
 
+![Pomoplant Screenshot](screenshot.png)
+
 ## About
 
 Pomoplant combines the proven Pomodoro Technique with the satisfying progression of growing plants. Complete focus sessions to water your plants and watch them grow through multiple stages. The more you focus, the more plants you'll grow!
